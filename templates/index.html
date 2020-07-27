@@ -1,0 +1,25 @@
+<!-- <h1>{{ context.hello }}</h1> -->
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<input type="text" id='user'>用户名</input>
+<input type="text" id='pwd'>密码</input>
+<button id=login_btn>登录</button>
+<script>
+    $("#login_btn").click(function () {
+        $.ajax({
+            url: "/login/",
+            type: "post",
+            data: {
+                "user": $("#user").val(),
+                "pwd": $("#pwd").val(),
+            },
+            success: function (data) {
+                console.log(data); // json字符串
+                console.log(typeof data);
+                var res = JSON.parse(data);// 反序列化 object {}
+                console.log(res.msg); // object
+                console.log(typeof res)
+
+            }
+        })
+    })
+</script>
