@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from . import view
+from django.views.static import serve
+from helloworld.settings import STATIC_ROOT
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
 # ]
@@ -29,4 +31,5 @@ urlpatterns = [
     path('login/', view.login),
     path('getpicture/', view.getpicture),
     path('getp/', view.getp),
+    url(r'^static/(?P<path>.*)$', serve, {"document_root": STATIC_ROOT}),
 ]

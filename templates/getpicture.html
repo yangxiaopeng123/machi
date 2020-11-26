@@ -1,11 +1,11 @@
-<!-- <h1>{{ context.hello }}</h1> -->
+{% load staticfiles%}
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
 
-<link href="/static/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="/static/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-<script src="/static/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script>
-<script src="/static/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<link href="{% static 'bootstrap-4.5.0-dist/css/bootstrap.min.css'%}" rel="stylesheet">
+<link href="{% static 'bootstrap-datetimepicker-master/css/bootstrap-datepicker3.min.css'%}" rel="stylesheet">
+<script src="/static/bootstrap-datetimepicker-master/js/bootstrap-datepicker.min.js"></script>
+<script src="/static/bootstrap-datetimepicker-master/js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 <script src="/static/bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
 
 <script src="/static/moment-with-locales.js"></script>
@@ -16,31 +16,22 @@
 
 <script>
     $(function () {
-        $('#startdate').datetimepicker({
-            bootcssVer:4,
+        $('#startdate').datepicker({
             forceParse:0,
             format: 'yyyy-mm-dd',
             language:'zh-CN',
-            minView:'month',
-            initialDate:new Date(),
             autoclose:true,
         });
-        $('#enddate').datetimepicker({
-            bootcssVer:4,
+        $('#enddate').datepicker({
             forceParse:0,
             format: 'yyyy-mm-dd',
             language:'zh-CN',
-            minView:'month',
-            initialDate:new Date(),
             autoclose:true,
         });
-        $('#givedate').datetimepicker({
-            bootcssVer:4,
+        $('#givedate').datepicker({
             forceParse:0,
             format: 'yyyy-mm-dd',
             language:'zh-CN',
-            minView:'month',
-            initialDate:new Date(),
             autoclose:true,
         });
     });

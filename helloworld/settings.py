@@ -25,7 +25,7 @@ SECRET_KEY = '3sti%*@c(5!gwg(z))^2k&wn&1g(hbm5qmteit2zv7rnx)2c0-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -119,9 +119,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ 
-    os.path.join(BASE_DIR, "statics"), 
+    os.path.join(BASE_DIR, "static"), 
 ]
-
-TEMPLATE_DIRS = (
-     BASE_DIR + '/status/picture',
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
